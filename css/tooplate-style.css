@@ -10,26 +10,40 @@ https://www.tooplate.com/view/2115-marvel
 body {
   font-family: "Maven Pro", sans-serif;
   padding-top: 70px;
+  background: #eee;
 }
-
 #home-page {
+  width: 7rem;
+  height: 7rem;
+  background: #fff;
+  border-radius: 50%;
+}
+.dark-mode #home-page {
+  background: #eee;
+  border-radius: 50%;
+}
+#logo {
   width: 5.5rem;
   height: 5rem;
 }
-
+.dark-mode .about-text p {
+  color: #fff;
+}
 .full-screen {
   padding: 8rem 0;
 }
-
 .small-text {
   color: #5b5b5b;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
-  padding: 8px 16px;
   border-radius: 50px;
   letter-spacing: 0.2px;
 }
-
+.project-title {
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 1rem;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -56,7 +70,7 @@ p {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
-  color: #5b5b5b;
+  color: #000;
 }
 
 h1,
@@ -71,7 +85,7 @@ h6 {
 
 h1 {
   color: #212121;
-  font-size: 2.8em;
+  font-size: 3em;
   margin: 24px 0;
 }
 
@@ -93,7 +107,7 @@ strong {
 
 .custom-btn {
   background: #eee;
-  color: #5b5b5b;
+  color: #123f92;
   font-weight: bold;
   border-radius: 50px;
   padding: 13px 29px;
@@ -103,44 +117,70 @@ strong {
   transition: all 0.4s ease;
 }
 .custom-btn:hover {
-  color: #1900ff;
+  color: #123f92;
 }
 .custom-btn.custom-btn-bg {
   background: #474559;
   color: #ffffff;
 }
 .custom-btn.custom-btn-bg:hover {
-  background: #1900ff;
+  background: #123f92;
   color: #ffffff !important;
+}
+.info-about{
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.info-btn{
+  background-color: #123f92;
+  color: #fff;
+  border: #ffe;
+  border-radius: 3rem;
+  padding: 0.8rem;
+  width: 100%;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+
+media (min-width: 780px) {
+  .info-about{
+      flex-direction: column;
+      max-width: none;
+      justify-content: center;
+  }
+}
+.dark-mode .info-btn{
+  background-color: #ffc400;
+  color: #fff,
+
 }
 
 .animated {
   position: relative;
 }
-
 .animated-info {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
-  min-width: 260px;
-  position: relative;
-}
-
-.animated-item {
-  color: #1900ff;
-}
-
-.animated-item {
-  font-size: 38px;
-  line-height: inherit;
   display: block;
+  vertical-align: top;
+  min-width: 260px;
+  position: relative; 
+}
+.animated-item {
+  color: #123f92;
+  font-size: 3rem;
+}
+.animated-item {
+  font-size: 4rem;
+  line-height: inherit;
+  display: inline-block;
   opacity: 0;
   overflow: hidden;
-  position: absolute;
+  position: block;
   top: 0;
   right: 0;
   left: 0;
-  animation: BottomTotop 6s linear infinite 0s;
+  animation: BottomTotop 5s linear infinite 0s;
 }
 .animated-item:nth-child(2n + 2) {
   animation-delay: 2s;
@@ -148,7 +188,41 @@ strong {
 .animated-item:nth-child(3n + 3) {
   animation-delay: 4s;
 }
-
+/* experiencia */
+.experience-list {
+  list-style: none;
+  padding: 0;
+}
+.experience-item {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #004080;
+}
+.dark-mode .experience-item {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+}
+.experience-item.active {
+  background-color: #123f92;
+  color: white;
+  border-radius: 8px;
+}
+.experience-details {
+  display: none;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.experience-details.active {
+  display: block;
+}
+.experience-details p {
+  text-align: justify;
+}
 @keyframes BottomTotop {
   0% {
     opacity: 0;
@@ -192,7 +266,7 @@ strong {
   transform: translate(0, 0);
 }
 .navbar[class*="headroom--not-top"] {
-  background: #ffffff;
+  background: #eee;
   border-bottom: 1px solid #f0f0f0;
   padding-top: 0;
   padding-bottom: 0;
@@ -225,7 +299,7 @@ strong {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #1900ff;
+  color: #123f92;
   font-weight: bold;
 }
 .navbar-light .navbar-nav .nav-link:focus span,
@@ -297,11 +371,11 @@ strong {
   font-family: "unicons";
   content: "\eb65";
   font-size: 30px;
-  color: #ffffff;
+  color: #FFC300;
 }
 
 .dark-mode {
-  background: #0c0c0d;
+  background: #222;
 }
 .dark-mode .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.8);
@@ -314,7 +388,7 @@ strong {
   border-bottom: 1px solid #1f1f1f;
 }
 .dark-mode .small-text {
-  background: #0d0c15;
+  
   color: #ffffff;
 }
 .dark-mode .feature-card .uil,
@@ -333,7 +407,15 @@ strong {
 .dark-mode .owl-carousel button.owl-dot {
   color: #ffffff;
 }
-
+.dark-mode .experience-details{
+  background: #383838;
+}
+.dark-mode .experience-details p{
+  color: #fff;
+}
+.dark-mode .animated-item {
+  color: #ffc200;
+}
 .timeline-wrapper {
   position: relative;
   padding: 22px 0;
@@ -394,7 +476,7 @@ strong {
   top: 50%;
   transform: translate(0, -50%);
   font-family: "unicons";
-  font-size: 100px;
+  font-size: 50px;
   line-height: normal;
 }
 .owl-carousel .owl-nav .owl-prev:before {
@@ -436,8 +518,8 @@ strong {
   position: relative;
 }
 .contact-form .form-control {
-  background: transparent;
-  border-radius: 2px;
+  background: #fff;
+  border-radius: 1rem;
   outline: none;
   box-shadow: none;
   font-weight: bold;
@@ -451,20 +533,20 @@ strong {
   border-color: #ffc200;
 }
 .contact-form .submit-btn {
-  background: #1900ff;
-  border-radius: 50px;
-  color: #ffffff;
+  background: #eee;
+  border-radius: 1rem;
+  color: #123f92;
   font-weight: bold;
-  border: 0;
+  border: 1px solid #123f92;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 .contact-form .submit-btn:hover {
-  background: #474559;
+  background: #123f92;
+  color: #fff;
 }
-
 .contact-info {
-  background: #564bbd;
+  background: #4580ef;
   border-radius: 0 0 3px 3px;
   position: relative;
   bottom: 8px;
@@ -473,15 +555,32 @@ strong {
 .contact-info a {
   color: #f7f3f3;
 }
-
-.social-links .uil {
-  color: #f7f3f3;
-  font-size: 20px;
-  display: block;
-  margin: 5px 0;
+.footer {
+  background-color: #f8f9fa;
 }
-.social-links .uil:hover {
-  color: #ffc200;
+.footer-container {
+  background-color: #123f92;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2.5rem;
+}
+
+.footer p, .footer ul {
+  margin: 10px;
+  color: black;
+}
+
+.social-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin: 0 5px;
 }
 
 @media (min-width: 1270px) {
@@ -500,7 +599,7 @@ strong {
   }
 
   .about-image {
-    margin-top: 4em;
+    margin-top: 3em;
   }
 
   .mobile-mt-2,
@@ -522,11 +621,10 @@ strong {
   }
 
   .animated-item {
-    font-size: 28px;
+    width: 400px;
   }
-
   .navbar-collapse {
-    background: #ffffff;
+    background: #eee;
     text-align: center;
     padding-bottom: 20px;
   }
@@ -561,6 +659,18 @@ strong {
     margin: 10px 0 0 0;
   }
 }
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
 @media (max-width: 320px) {
   .animated-text {
     margin-top: 0;
@@ -587,3 +697,71 @@ strong {
     vertical-align: top;
   }
 }
+
+
+/* SERVICES */
+.container-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.blue { 
+  background-color: #7766E0; 
+}
+
+.dark-mode .white > h3,
+.dark-mode .blue > h3,
+.dark-mode .gray > h3{
+  color: #000;
+  }
+
+.gray { background-color: #c2c7cf; }
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* MEDIA QUERY: Cuando la pantalla es mayor a 768px, se acomodan en fila */
+@media (min-width: 768px) {
+    .cards {
+        flex-direction: row;
+        max-width: none;
+    }
+  }
